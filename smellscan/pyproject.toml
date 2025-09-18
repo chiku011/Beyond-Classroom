@@ -1,0 +1,20 @@
+[project]
+name = "smellscan"
+version = "0.1.0"
+description = "Security smell detector for code snippets"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{name="AI Hackathon"}]
+license = {text = "MIT"}
+
+[project.scripts]
+smellscan = "smellscan.cli:main"
+
+[tool.setuptools]
+
+[tool.setuptools.packages.find]
+include = ["smellscan*"]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
