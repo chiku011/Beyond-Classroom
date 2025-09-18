@@ -1,0 +1,36 @@
+Metadata-Version: 2.4
+Name: smellscan
+Version: 0.1.0
+Summary: Security smell detector for code snippets
+Author: AI Hackathon
+License: MIT
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# smellscan
+
+A lightweight security smell detector for quick scans of code snippets or small repos.
+
+## Install
+
+```bash
+pip install -e .
+```
+
+## Usage
+
+```bash
+smellscan scan /path/to/src --format text
+smellscan scan /path/to/src --format json --output report.json
+smellscan scan - < example.py
+```
+
+## What it detects (initial)
+- SQL injection risks (string-concatenated queries, unsanitized inputs)
+- Hard-coded secrets (AWS keys, generic tokens, private keys)
+- Suspicious flags (curl -k, verify=False, DEBUG=True, CORS wildcard)
+
+## Notes
+Heuristic-only. False positives are possible.
